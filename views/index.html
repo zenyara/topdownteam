@@ -1,0 +1,67 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!-- I'm using this page to run an rpg game to stream on Twitch.tv. Lethal Lands RPG, lane-runner rpg -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GXU</title>
+    <meta charset="utf-8" />
+    <meta lang="en-us" />
+    <meta name="description" content="Top Down Team" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!--<script src="http://lethallands.com/assets/js/jquery-3.4.1.min.js"></script>-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!--<script src="http://lethallands.com/phaser-3.21.0/dist/phaser.min.js"></script>-->
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.21.0/dist/phaser.min.js"></script>
+
+    <script src="/src/scenes/Preloader.js"></script>
+    <script src="/src/scenes/Map1.js"></script>
+
+    <script src="/src/config.js"></script>
+
+    <!-- add UI "Tools" -->
+    <script src="/src/uitools/Stats.js"></script>
+    <script src="/src/uitools/Logo.js"></script>
+    <script src="/src/uitools/BackpackIcon.js"></script>
+    <script src="/src/uitools/BackpackUI.js"></script>
+    <script src="/src/uitools/MapIcon.js"></script>
+    <script src="/src/uitools/MapUI.js"></script>
+    <script src="/src/uitools/ToolIcon.js"></script>
+    <script src="/src/uitools/ToolUI.js"></script>
+
+    <!-- call "App" last! -->
+    <script src="/src/app.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <!--<img src="assets/eaglogo.jpg" />-->
+    <div class="pframe">
+      <div id="phaser-app"></div>
+    </div>
+  </body>
+</html>

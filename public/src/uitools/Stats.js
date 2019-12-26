@@ -32,7 +32,8 @@ class GameVersion {
       this.versionText
         .setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000)
         .setOrigin(0, 0)
-        .setDepth(10);
+        .setDepth(50)
+        .setScrollFactor(0);
       this.isLoaded = true;
     }
   }

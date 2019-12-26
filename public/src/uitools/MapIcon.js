@@ -20,7 +20,8 @@ class MapIcon {
     if (!this.isLoaded) {
       this.micon = this.scene.add
         .image(this.x, this.y, this.pic)
-        .setDepth(10)
+        .setDepth(50)
+        .setScrollFactor(0)
         .setInteractive({ cursor: "pointer" });
 
       this.micon.on(
@@ -63,7 +64,10 @@ class MapIcon {
         },
         this
       );
-      this.mText.setOrigin(0, 0).setDepth(11);
+      this.mText
+        .setOrigin(0, 0)
+        .setDepth(11)
+        .setScrollFactor(0);
 
       this.isLoaded = true;
     }

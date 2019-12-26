@@ -22,7 +22,8 @@ class Logo {
       this.logo = this.scene.add
         .image(this.x, this.y, this.pic)
         .setDepth(10)
-        .setScale(0.7);
+        .setScale(0.7)
+        .setScrollFactor(0);
       this.isLoaded = true;
     }
   }

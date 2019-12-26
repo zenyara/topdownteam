@@ -10,6 +10,16 @@ class ToolUI {
     this.xy = 128;
     this.pic = "inventory";
     this.picX = "invclose";
+
+    this.scene.input.keyboard.on(
+      "keydown_V",
+      function(event) {
+        if (game.input.mouse.locked) game.input.mouse.releasePointerLock();
+      },
+      0,
+      this
+    );
+
     this.scene.input.keyboard.on(
       "keyup",
       function(event) {
@@ -61,14 +71,18 @@ class ToolUI {
 
   show() {
     if (!this.isLoaded) {
-      this.img = this.scene.add.image(this.x, this.y, this.pic).setDepth(10);
+      this.img = this.scene.add
+        .image(this.x, this.y, this.pic)
+        .setDepth(10)
+        .setScrollFactor(0);
       this.imgX = this.scene.add
         .image(this.xx, this.xy, this.picX)
         .setInteractive({ cursor: "pointer" })
-        .setDepth(10);
+        .setDepth(60)
+        .setScrollFactor(0);
 
       this.imgX.on(
-        "pointerdown",
+        "pointerup",
         function(event) {
           this.hide();
           config.activeTool = "none";
@@ -89,25 +103,8 @@ class ToolUI {
         },
         this
       );
-      this.iText.setDepth(11);
+      this.iText.setDepth(11).setScrollFactor(0);
 
-      // "Close" text
-      /*
-      this.cText = this.scene.make.text(
-        {
-          x: this.cx,
-          y: this.cy,
-          text: "close",
-          style: {
-            font: "11px monospace",
-            fill: "#fff"
-          }
-        },
-        this
-      );
-      this.cText.setDepth(11);*/
-
-      config.activeTool = "tools";
       this.isLoaded = true;
     }
   }

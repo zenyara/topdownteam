@@ -20,8 +20,8 @@ class ToolIcon {
     if (!this.isLoaded) {
       this.ticon = this.scene.add
         .image(this.x, this.y, this.pic)
-        .setDepth(10)
-        .setInteractive({ cursor: "pointer" });
+        .setDepth(50)
+        .setInteractive({ cursor: "pointer" }).setScrollFactor(0);
 
       this.ticon.on(
         "pointerdown",
@@ -63,7 +63,7 @@ class ToolIcon {
         },
         this
       );
-      this.tText.setOrigin(0, 0).setDepth(11);
+      this.tText.setOrigin(0, 0).setDepth(11).setScrollFactor(0);
 
       this.isLoaded = true;
     }

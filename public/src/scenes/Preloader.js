@@ -1,8 +1,7 @@
 var Preloader = new Phaser.Scene("Preloader");
 
 // Use this file to preload-in all of our images
-(Preloader.preload = function() {
-  "use strict";
+Preloader.preload = function() {
   config.currentScene = "Preloader";
 
   this.load.image(
@@ -29,11 +28,22 @@ var Preloader = new Phaser.Scene("Preloader");
     "toolicon",
     "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Ficontool.png?v=1577108236375"
   );
+  this.load.image(
+    "player",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fplayer.png?v=1577177503097"
+  );
+  this.load.image(
+    "tileset",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Ftiles_desert.png?v=1577029029114"
+  );
+  this.load.image(
+    "reticle",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Freticule.png?v=1577208807722"
+  );
 
   //
-}),
-  // executed once, after assets were loaded
-  (Preloader.create = function() {
-    "use strict";
-    this.scene.start("Map1");
-  });
+};
+// executed once, after assets were loaded  https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Freticule.png?v=1577208807722
+Preloader.create = function() {
+  this.scene.start("Map1");
+};

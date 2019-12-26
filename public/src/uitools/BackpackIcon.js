@@ -21,7 +21,8 @@ class BackpackIcon {
     if (!this.isLoaded) {
       this.bag = this.scene.add
         .image(this.x, this.y, this.pic)
-        .setDepth(10)
+        .setDepth(50)
+        .setScrollFactor(0)
         .setInteractive({ cursor: "pointer" });
 
       this.bag.on(
@@ -64,7 +65,10 @@ class BackpackIcon {
         },
         this
       );
-      this.bText.setOrigin(0, 0).setDepth(11);
+      this.bText
+        .setOrigin(0, 0)
+        .setDepth(11)
+        .setScrollFactor(0);
 
       this.isLoaded = true;
     }

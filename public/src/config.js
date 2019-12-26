@@ -6,22 +6,32 @@ let config = {
   backgroundColor: "#000",
   pixelArt: true,
   roundPixels: true,
+  autoCenter: Phaser.Scale.CENTER_BOTH,
   physics: {
     default: "arcade",
     arcade: {
       gravity: { y: 0 },
-      debug: true
+      debug: false
     }
   },
   scene: [Preloader, Map1],
+  extend: {
+    // you instantiate var 'whatever' here (for main scene)
+    _player: null,
+    _reticle: null,
+    _bullets: null,
+    _logo: null,
+    _gameVersion: null,
+    _time: 0
+  },
   currentScene: "App",
   title: "Top Down Team",
   version: "1.0",
-  bagOpen: false,
-  mapOpen: false,
-  toolsOpen: false,
-  activeTool: "none"
+  activeTool: "none",
+  pointerLocked: false
 };
 
 config.centerX = Math.round(0.5 * config.width);
 config.centerY = Math.round(0.5 * config.height);
+
+var game;

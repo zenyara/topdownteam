@@ -1,0 +1,16 @@
+  /* KEEP THIS EXAMPLE!
+  // Add-in our current (map) level from an array
+  var build = eval("_" + config.currentLevel);
+  _level = new build(this);
+
+  // When loading from an array, make sure to specify the tileWidth and tileHeight
+  const map = this.make.tilemap({data: _level.data,tileWidth: 32,tileHeight: 32});
+  const tiles = map.addTilesetImage("tileset");
+  // prettier-ignore
+  const layer = map.createStaticLayer(0,tiles,-config.centerX+504,-config.centerY+280);
+*/
+
+
+// EVAL example (variable variable)
+  var build = eval("_" + config.currentLevel);
+  _level = new build(this);

@@ -1,12 +1,10 @@
 let config = {
-  type: Phaser.AUTO,
+  type: Phaser.WEBGL,
   parent: "phaser-app",
   width: 1024,
   height: 600,
-  backgroundColor: "#000",
   pixelArt: true,
   roundPixels: true,
-  autoCenter: Phaser.Scale.CENTER_BOTH,
   physics: {
     default: "arcade",
     arcade: {
@@ -21,14 +19,18 @@ let config = {
     _reticle: null,
     _bullets: null,
     _logo: null,
+    _background: null,
     _gameVersion: null,
-    _time: 0
+    _time: 0,
+    _level: null,
+    _controls: null,
+    _map: null
   },
   currentScene: "App",
+  currentLevel: 0,
   title: "Top Down Team",
   version: "1.0",
-  activeTool: "none",
-  pointerLocked: false
+  activeTool: "none"
 };
 
 config.centerX = Math.round(0.5 * config.width);

@@ -73,12 +73,12 @@ class MapUI {
     if (!this.isLoaded) {
       this.img = this.scene.add
         .image(this.x, this.y, this.pic)
-        .setDepth(10)
+        .setDepth(110)
         .setScrollFactor(0);
       this.imgX = this.scene.add
         .image(this.xx, this.xy, this.picX)
         .setInteractive({ cursor: "pointer" })
-        .setDepth(60)
+        .setDepth(111)
         .setScrollFactor(0);
 
       this.imgX.on(

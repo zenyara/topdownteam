@@ -21,7 +21,7 @@ class Logo {
     if (!this.isLoaded) {
       this.logo = this.scene.add
         .image(this.x, this.y, this.pic)
-        .setDepth(10)
+        .setDepth(110)
         .setScale(0.7)
         .setScrollFactor(0);
       this.isLoaded = true;

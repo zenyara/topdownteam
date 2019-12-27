@@ -34,7 +34,8 @@ class Reticle {
         .sprite(0, 0, "reticle")
         .setOrigin(0.5, 0.5)
         .setDisplaySize(32, 32)
-        .setCollideWorldBounds(true);
+        .setCollideWorldBounds(true)
+        .setDepth(77);
 
       // Move reticle upon locked pointer move
       this.scene.input.on(

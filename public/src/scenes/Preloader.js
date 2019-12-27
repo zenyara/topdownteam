@@ -5,6 +5,18 @@ Preloader.preload = function() {
   config.currentScene = "Preloader";
 
   this.load.image(
+    "blank",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fblankpng.png?v=1577361262266"
+  );
+  this.load.image(
+    "bgribbon",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fdarkribbon.png?v=1577363124389"
+  );
+  this.load.image(
+    "bgsand",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fbsandtile.png?v=1577361550671"
+  );
+  this.load.image(
     "tdtlogo",
     "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Ftdtlogo.png?v=1577099651920"
   );
@@ -32,13 +44,26 @@ Preloader.preload = function() {
     "player",
     "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fplayer.png?v=1577177503097"
   );
+  // Tile set
   this.load.image(
     "tileset",
-    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Ftiles_desert.png?v=1577029029114"
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Ftile_desert.png?v=1577369418702"
   );
   this.load.image(
     "reticle",
     "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Freticule.png?v=1577208807722"
+  );
+
+  /* Load CSV tile map
+  this.load.tilemapCSV(
+    "map0",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fworld_level.csv?v=1577365868503"
+  );*/
+
+  // Load JSON tile map
+  this.load.tilemapTiledJSON(
+    "map0",
+    "https://cdn.glitch.com/d8d8f298-1643-4fe5-96bf-4eabd8e5b3ad%2Fmap0.json?v=1577390896848"
   );
 
   //

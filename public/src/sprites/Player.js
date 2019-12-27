@@ -7,6 +7,7 @@ class Player {
     this.pic = "player";
     this.player;
     this.reticle;
+    this.speed = 200;
     this.show();
   }
 
@@ -23,7 +24,7 @@ class Player {
       this.reticle.y
     );
     // Constrain velocity of player
-    this.constrainVelocity(500);
+    this.constrainVelocity(this.speed);
   }
   // END update()
 
@@ -41,11 +42,12 @@ class Player {
       //game._xxx(); WE CAN CALL game.function() from any class!
 
       this.player = this.scene.physics.add
-        .sprite(config.centerX, config.centerY, "player")
+        .sprite(config.centerX, config.centerY, this.pic)
         .setOrigin(0.5, 0.5)
         //.setDisplaySize(132, 120)
         .setCollideWorldBounds(true)
-        .setDrag(500, 500);
+        .setDrag(500, 500)
+        .setDepth(77);
 
       this.scene.cameras.main.startFollow(this.player);
 
@@ -85,23 +87,6 @@ class Player {
       this.scene.input.keyboard.on("keyup_D", function(event) {
         if (moveKeys["left"].isUp) sprite.setAccelerationX(0);
       });
-
-      this.bText = this.scene.make.text(
-        {
-          x: this.x - 32,
-          y: this.y + 22,
-          text: "Soandso",
-          style: {
-            font: "10px monospace",
-            fill: "#fff"
-          }
-        },
-        this
-      );
-      this.bText
-        .setOrigin(0, 0)
-        .setDepth(10)
-        .setScrollFactor(0);
 
       this.isLoaded = true;
     }
